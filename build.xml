@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- nombre de proyecto y ejecución por default de ant -->
+<project name="pwa-claroshop" default="build">
+    <!-- pasos que encadenan la funcion build -->
+    <target name="build" depends="clean,prepare,npm-install,react-scripts,mv2dist"/>
+    <!-- borra directorio dist/ -->
+    <target name="clean" description="Cleanup dist/ dir">
+        <delete dir="${basedir}/dist"/>
+    </target>
+    <!-- crea directorio dist -->
+    <target name="prepare" depends="clean" description="Create empty dist/ dir">
+        <mkdir dir="${basedir}/dist"/>
+    </target>    
+    <!-- ejecuta npm con argumento build -->    
+    <target name="npm-install" description="Build with npm">
+        <exec executable="npm" failonerror="true">
+            <arg value="install"/>
+            <!--arg value="composer.phar"/>
+            <arg value="install"/>
+	        <arg value="- -prefer-dist"/>
+            <arg value="- -no-dev"/>
+            <arg value="-o"/-->
+        </exec>
+    </target>
+    <target name="react-scripts" description="Ejecute react scripts">
+        <exec executable="npm" failonerror="true">
+            <arg value="run"/>
+            <arg value="build"/>
+        </exec>
+    </target>
+    <target name="mv2dist" description="Move build data to dist">
+        <copy todir="dist">
+            <fileset dir="build" includes="**"/>
+        </copy> 
+    </target>
+</project>

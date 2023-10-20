@@ -1,0 +1,60 @@
+.section-videos
+    background-color: #232323
+    height: 270px
+    color: #fff
+    @media(max-width: 780px)
+        height: 470px
+    @media(max-width: 480px)
+        height: 870px
+    .section-videos-title
+        display: flex
+        justify-content: center
+        h2
+            margin-top: 30px
+            margin-bottom: 20px
+            text-transform: uppercase
+    .section-videos-content
+        width: 60%
+        margin: auto
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-column-gap: 10px
+        justify-content: space-around
+        @media(max-width: 780px)
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 20px
+        @media(max-width: 480px)
+            grid-template-columns: repeat(1, 1fr)
+        .section-videos-content-video
+            text-align: center
+            img
+                width: 150px
+                cursor: pointer
+            h4
+                text-transform: uppercase
+                font-size: 13px
+        .section-videos-content-video-selected
+            display: flex
+            flex-direction: column
+            margin-left: auto
+            margin-right: auto
+            h4
+                text-transform: uppercase
+                font-size: 13px
+                margin-top: 5px
+                text-align: center
+            .video-selected-red
+                background-color: #e82100
+                color: #fff
+                border-radius: 50%
+                width: 150px
+                height: 150px
+                text-align: center
+                display: flex
+                align-items: center
+                justify-content: center
+                font-size: 10px
+                font-weight: 600
+                p
+                    padding: 10px
+

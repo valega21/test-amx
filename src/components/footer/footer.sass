@@ -1,0 +1,67 @@
+$color-white: #fff
+$color-black: #000
+
+.footer
+    background-color: $color-black
+    border-top: 3px solid #353535
+    height: 80px
+    @media(max-width: 680px)
+        height: 140px
+    .footer-content
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 10px
+        align-items: center
+        margin: auto
+        width: 80%
+        margin-top: 20px
+        margin-bottom: 20px
+        @media(max-width: 680px)
+            grid-template-columns: repeat(1, 1fr)
+        .footer-content-privacidad
+            color: $color-white
+            display: flex
+            margin: auto
+            a
+                color: $color-white
+                font-size: 9px
+                text-decoration: none
+                font-weight: 600
+            p
+                margin-left: 3px
+                margin-right: 3px
+                font-size: 9px
+        .footer-content-logo
+            margin: auto
+            img
+                width: 90px
+                height: 40px
+
+        .footer-content-redes
+            margin: auto
+            ul
+                display: flex
+                color: blue
+                list-style: none
+                li
+                    margin-right: 5px
+                .logo-mobile
+                    background-color: #6eaaf3
+                    width: 20px
+                    height: 20px
+                    border-radius: 2px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    &:before
+                        content: ''
+                        width: 13px
+                        height: 13px
+                        display: block
+                        background-image: url('/assets/mobli-icon.png')
+                        background-repeat: no-repeat
+                        background-size: cover
+                img
+                    width: 20px
+                    height: 20px
+                    border-radius: 2px
